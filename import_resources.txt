@@ -1,0 +1,2 @@
+### import resource group rg-icdev-its-crm
+terraform import -var-file="secrets.tfvars" azurerm_resource_group.rg /subscriptions/d451fcc1-fdeb-45c9-8800-e0ad284c9417/resourceGroups/rg-icdev-its-crm
