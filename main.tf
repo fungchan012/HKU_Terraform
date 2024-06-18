@@ -6,8 +6,8 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "rg-icuat-its-crm"
-    storage_account_name = "sticuatcrm"
+    resource_group_name  = "rg-icprod-its-crm"
+    storage_account_name = "sticprodcrm"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
   }

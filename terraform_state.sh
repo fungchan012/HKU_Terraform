@@ -1,9 +1,9 @@
 #!/bin/bash
 
-ENV="UAT"
+ENV="PROD"
 PROJECT_NAME="its-crm"
-RESOURCE_GROUP_NAME="rg-icuat-its-crm"
-STORAGE_ACCOUNT_NAME="sticuatcrm"
+RESOURCE_GROUP_NAME="rg-icprod-its-crm"
+STORAGE_ACCOUNT_NAME="sticprodcrm"
 CONTAINER_NAME="tfstate"
 
 # Create resource group

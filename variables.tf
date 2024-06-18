@@ -8,7 +8,7 @@ variable "project" {
   type = map(any)
   default = {
     name     = "crm"
-    env      = "icuat"
+    env      = "icprod"
     location = "eastasia"
   }
 }
@@ -16,7 +16,7 @@ variable "project" {
 variable "tag" {
   type = map(any)
   default = {
-    env = "UAT"
+    env = "PROD"
   }
 }
 
@@ -26,7 +26,7 @@ variable "azure_subscription_id" {
 
 variable "exist_rg" {
   type    = string
-  default = "rg-icuat-its-crm"
+  default = "rg-icprod-its-crm"
 }
 
 variable "allowed_ip_ranges" {
@@ -41,32 +41,32 @@ variable "allowed_ip_ranges" {
 
 variable "vnet_address_prefixes" {
   type    = string
-  default = "192.168.8.0/21"
+  default = "192.168.16.0/21"
 }
 
 variable "st_address_prefixes" {
   type    = string
-  default = "192.168.12.0/24"
+  default = "192.168.20.0/24"
 }
 
 variable "vm_address_prefixes" {
   type    = string
-  default = "192.168.11.0/24"
+  default = "192.168.19.0/24"
 }
 
 variable "kv_address_prefixes" {
   type    = string
-  default = "192.168.8.0/24"
+  default = "192.168.16.0/24"
 }
 
 variable "aks_address_prefixes" {
   type    = string
-  default = "192.168.9.0/24"
+  default = "192.168.17.0/24"
 }
 
 variable "agw_address_prefixes" {
   type    = string
-  default = "192.168.10.0/24"
+  default = "192.168.18.0/24"
 }
 
 ###############################################################################   VM Variable  ###############################################################################
@@ -87,7 +87,7 @@ variable "application_1" {
   type = any
   default = {
     name         = "web"
-    ip_addresses = ["192.168.9.10"]
+    ip_addresses = ["192.168.18.11"]
     routing_path = ["/form/*", "/form*"]
   }
 }
@@ -96,7 +96,7 @@ variable "application_2" {
   type = any
   default = {
     name         = "api"
-    ip_addresses = ["192.168.9.11"]
+    ip_addresses = ["192.168.18.10"]
     routing_path = ["/api/*", "/callback/*"]
   }
 }
@@ -105,7 +105,7 @@ variable "application_2" {
 
 variable "aks_sku_tier" {
   type    = string
-  default = "Free"
+  default = "Standard"   ### Free / Standard / Premium
 }
 
 variable "aks_version" {
@@ -120,15 +120,15 @@ variable "aks_vm_size" {
 
 variable "aks_service_cidr" {
   type    = string
-  default = "172.18.0.0/16"
+  default = "172.20.0.0/16"
 }
 
 variable "aks_dns_service_ip" {
   type    = string
-  default = "172.18.0.10"
+  default = "172.20.0.10"
 }
 
 variable "aks_pod_cidr" {
   type    = string
-  default = "172.19.0.0/16"
+  default = "172.21.0.0/16"
 }
